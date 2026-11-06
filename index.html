@@ -41,7 +41,7 @@
     <a class="cta" href="https://instagram.com/larasantana.ia">Seguir no Instagram</a>
   </header>
 
-  <details open>
+  <details id="efeitos" open>
     <summary><span>6 efeitos de edição de vídeo<small>1 prompt cada, no Claude Code · palavra: EDITAR</small></span></summary>
     <div class="body">
       <p class="note">Abra o Claude Code numa pasta com o seu vídeo (ex.: <b>video.mp4</b>, você falando pra câmera). Troque o que está entre [colchetes].</p>
@@ -71,7 +71,7 @@
     </div>
   </details>
 
-  <details>
+  <details id="juri">
     <summary><span>Júri de IAs<small>7 IAs julgam sua ideia · palavra: JÚRI</small></span></summary>
     <div class="body">
       <p class="note">Cole no Claude ou no ChatGPT e troque o que está entre [colchetes].</p>
@@ -104,7 +104,7 @@ Seja direto e específico. Se faltar informação, diga o que falta em vez de in
     </div>
   </details>
 
-  <details>
+  <details id="replica">
     <summary><span>Replica Skill<small>clone o que um app faz, sem copiar código · palavra: APLICATIVO</small></span></summary>
     <div class="body">
       <p class="note">A skill é gratuita e tem 11 módulos. Instruções e download no repositório oficial:</p>
@@ -122,6 +122,10 @@ Seja direto e específico. Se faltar informação, diga o que falta em vez de in
       if (navigator.clipboard) { navigator.clipboard.writeText(t).then(done); } else { var r = document.createRange(); r.selectNode(b.parentElement.querySelector('pre')); getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand('copy'); done(); }
     });
   });
+  (function () {
+    var h = location.hash.slice(1), d = h && document.getElementById(h);
+    if (d && d.tagName === 'DETAILS') { document.querySelectorAll('details').forEach(function (x) { x.open = false; }); d.open = true; d.scrollIntoView(); }
+  })();
 </script>
 </body>
 </html>
