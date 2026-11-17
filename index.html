@@ -6,12 +6,12 @@
 <title>Prompts grátis · @larasantana.ia</title>
 <meta name="description" content="Os prompts de IA dos vídeos da Lara Santana, prontos para copiar e colar.">
 <style>
-  :root { --bg:#0e0f14; --card:#181a22; --line:#2a2d3a; --txt:#f2f3f7; --mut:#9aa0b4; --pink:#e0407a; --green:#2fbf71; }
+  :root { --bg:#0e0f14; --card:#181a22; --line:#2a2d3a; --txt:#f2f3f7; --mut:#9aa0b4; --pink:#7c3aed; --green:#2fbf71; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--txt); font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
   main { max-width:620px; margin:0 auto; padding:32px 18px 60px; }
   header { text-align:center; margin-bottom:26px; }
-  .av { width:84px; height:84px; border-radius:50%; background:linear-gradient(135deg,var(--pink),#8a1f55); display:inline-flex; align-items:center; justify-content:center; font-size:38px; }
+  .av { width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--pink); }
   h1 { font-size:22px; margin:12px 0 4px; }
   header p { color:var(--mut); margin:0 0 14px; }
   .cta { display:inline-block; background:var(--pink); color:#fff; text-decoration:none; font-weight:700; padding:10px 20px; border-radius:999px; }
@@ -25,25 +25,102 @@
   .p { background:#11121a; border:1px solid var(--line); border-radius:12px; padding:14px; margin:12px 0; }
   .p h3 { margin:0 0 8px; font-size:15px; }
   .p pre { margin:0 0 10px; white-space:pre-wrap; word-wrap:break-word; font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; color:#dfe2ee; }
-  button { background:transparent; border:1px solid var(--pink); color:var(--pink); border-radius:999px; padding:6px 14px; font-weight:600; cursor:pointer; }
+  button { background:transparent; border:1px solid #a78bfa; color:#a78bfa; border-radius:999px; padding:6px 14px; font-weight:600; cursor:pointer; }
   button.ok { background:var(--green); border-color:var(--green); color:#fff; }
   .note { color:var(--mut); font-size:14px; }
-  a { color:var(--pink); }
+  a { color:#a78bfa; }
   .sec { font-size:15px; color:var(--mut); text-transform:uppercase; letter-spacing:.06em; margin:26px 0 4px; }
   .lk { margin:8px 0; }
   footer { text-align:center; color:var(--mut); font-size:13px; margin-top:28px; }
+  #q { width:100%; background:var(--card); border:1px solid var(--line); color:var(--txt); border-radius:999px; padding:12px 18px; font-size:16px; margin:0 0 6px; }
+  #q:focus { outline:2px solid var(--pink); }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 4px; }
+  .chips a { background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:14px; text-decoration:none; color:var(--txt); }
+  .chips a:active { border-color:var(--pink); }
+  .sec { scroll-margin-top:12px; }
+  #none { display:none; text-align:center; color:var(--mut); margin:24px 0; }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <div class="av">🤖</div>
-    <h1>Prompts grátis</h1>
+    <img class="av" src="lara.jpg" alt="Lara Santana">
+    <h1>Lara Santana</h1>
     <p>@larasantana.ia · as IAs que fazem em minutos o que levava horas</p>
     <a class="cta" href="https://instagram.com/larasantana.ia">Seguir no Instagram</a>
   </header>
 
-  <h2 class="sec">Vídeos mais recentes</h2>
+  <input id="q" type="search" placeholder="Buscar: digite a palavra do vídeo (ex.: STRIX)" autocomplete="off">
+  <div class="chips">
+    <a href="#g-prompts">Prompts</a>
+    <a href="#g-seguranca">Segurança</a>
+    <a href="#g-ferramentas">Ferramentas de IA</a>
+    <a href="#g-tutoriais">Tutoriais</a>
+  </div>
+  <section class="grp" id="g-prompts"><h2 class="sec">Prompts para copiar e colar</h2>
+  <details id="efeitos">
+    <summary><span>6 efeitos de edição de vídeo<small>1 prompt cada, no Claude Code · palavra: EDITAR</small></span></summary>
+    <div class="body">
+      <p class="note">Abra o Claude Code numa pasta com o seu vídeo (ex.: <b>video.mp4</b>, você falando pra câmera). Troque o que está entre [colchetes].</p>
+
+      <div class="p"><h3>Antes de começar (só na primeira vez)</h3>
+<pre>Instale o que for preciso para editar vídeo nesta pasta: ffmpeg e, em Python, rembg e opencv-python. Confirme quando estiver tudo funcionando.</pre><button>Copiar</button></div>
+
+      <div class="p"><h3>1. Cards de prova atrás de você</h3>
+<pre>No arquivo [video.mp4], recorte a pessoa do fundo quadro a quadro (rembg) e coloque dois cards escuros com cantos arredondados ATRÁS dela, um de cada lado da cabeça, com os textos "[377 mil views]" e "[699 mil views]". Os cards entram com um pulinho no segundo [2] e ficam até o fim. Salve como cards.mp4 sem mudar o áudio.</pre><button>Copiar</button></div>
+
+      <div class="p"><h3>2. Gráfico de vidro que conta as views</h3>
+<pre>No [video.mp4], a partir do segundo [3], mostre na parte de baixo um painel de vidro fosco (translúcido, borda branca fina) com o título "Views · um reel", um número que conta de 0 até [699.229] em 2 segundos e 5 barras que crescem junto. Salve como grafico.mp4 mantendo o áudio.</pre><button>Copiar</button></div>
+
+      <div class="p"><h3>3. Congela e vira figurinha</h3>
+<pre>No [video.mp4], no segundo [4], congele o quadro por 1,5 segundo: recorte a pessoa (rembg), coloque um contorno branco grosso em volta dela como um adesivo, incline 3 graus e escureça um pouco o fundo. Depois o vídeo continua normal. Salve como figurinha.mp4 com o áudio original.</pre><button>Copiar</button></div>
+
+      <div class="p"><h3>4. Ranking de IAs na tela</h3>
+<pre>No [video.mp4], a partir do segundo [2], coloque à direita um quadro escuro "Ranking de IAs" com as linhas S, A, B, C, D (cada letra numa cor). As etiquetas entram uma a uma a cada 0,4 s: S = [Claude], A = [ChatGPT] e [Gemini], B = [Copilot]. Salve como ranking.mp4 mantendo o áudio.</pre><button>Copiar</button></div>
+
+      <div class="p"><h3>5. Texto gigante atrás de você</h3>
+<pre>No [video.mp4], escreva "[20 MIL]" em branco, letra grossa e enorme, ATRÁS da pessoa (recorte com rembg e coloque a pessoa por cima do texto). O texto sobe e aparece no segundo [1]. Salve como texto-atras.mp4 com o áudio.</pre><button>Copiar</button></div>
+
+      <div class="p"><h3>6. Cor de cinema num prompt só</h3>
+<pre>Faça uma correção de cor de cinema no [video.mp4]: contraste maior, pretos mais profundos, sombras puxando pro azul-esverdeado e pele quente (estilo teal & orange), sem estourar o branco. Salve como cinema.mp4 e também um antes-e-depois lado a lado em comparacao.mp4.</pre><button>Copiar</button></div>
+
+      <p class="note"><b>Dica:</b> se o recorte da pessoa ficar ruim, grave com fundo liso e boa luz. O rembg roda no seu computador e pode demorar uns minutos em vídeos longos.</p>
+    </div>
+  </details>
+  <details id="juri">
+    <summary><span>Júri de IAs<small>7 IAs julgam sua ideia · palavra: JÚRI</small></span></summary>
+    <div class="body">
+      <p class="note">Cole no Claude ou no ChatGPT e troque o que está entre [colchetes].</p>
+      <div class="p"><h3>Prompt do Júri</h3>
+<pre>Quero que você monte um JÚRI para avaliar minha ideia com honestidade. Não concorde comigo só para me agradar.
+
+MINHA IDEIA:
+[descreva sua ideia em poucas linhas: o que é, para quem, quanto custa, como ganha dinheiro]
+
+REGRAS DO JÚRI:
+1. Crie 7 jurados com visões diferentes:
+- Cliente (vai pagar por isso?)
+- Contador (as contas fecham?)
+- Concorrente (como eu te derrubaria?)
+- Sócio (vale meu tempo e meu dinheiro?)
+- Especialista de marketing (dá pra vender? pra quem?)
+- Especialista do setor (o que um veterano da área vê de errado?)
+- Advogado do diabo (qual o pior cenário realista?)
+2. ACUSAÇÃO: o jurado mais crítico apresenta os 3 maiores problemas da ideia.
+3. DEFESA: outro jurado responde a cada acusação com argumentos reais, sem enrolar.
+4. VOTAÇÃO SECRETA: cada jurado vota APROVADA ou REPROVADA, dá uma nota de 0 a 10 e explica o motivo em 1 frase.
+5. VEREDITO FINAL:
+- Resultado (placar dos votos e média das notas)
+- Os 3 pontos fracos mais graves
+- Os 2 pontos fortes reais
+- Um plano com 5 passos pra melhorar a ideia, do mais urgente pro menos urgente
+- Um teste barato que eu possa fazer nesta semana pra validar a ideia antes de investir
+
+Seja direto e específico. Se faltar informação, diga o que falta em vez de inventar.</pre><button>Copiar</button></div>
+    </div>
+  </details>
+  </section>
+  <section class="grp" id="g-seguranca"><h2 class="sec">Segurança e proteção</h2>
   <details id="strix">
     <summary><span>Strix: IA que testa a segurança do seu site<small>palavra: STRIX · 17/nov</small></span></summary>
     <div class="body">
@@ -81,13 +158,6 @@
       <p class="lk"><a href="https://go.creatoros.ca/blinda-pdf">Checklist BLINDA (PDF)</a></p>
     </div>
   </details>
-  <details id="empresa">
-    <summary><span>Perfil da sua empresa no ChatGPT<small>palavra: EMPRESA · 13/nov</small></span></summary>
-    <div class="body">
-      <p class="note">Business Hub do ChatGPT (em beta).</p>
-      <p class="lk"><a href="https://go.creatoros.ca/empresas-chatgpt">Abrir o link</a></p>
-    </div>
-  </details>
   <details id="idade">
     <summary><span>Conferir a conta do seu filho no Instagram<small>palavra: IDADE</small></span></summary>
     <div class="body">
@@ -95,13 +165,26 @@
       <p class="lk"><a href="https://go.creatoros.ca/idade-pdf">Ver o guia (PDF)</a></p>
     </div>
   </details>
-  <details id="repo">
-    <summary><span>3 repositórios do vídeo<small>palavra: REPO</small></span></summary>
+  </section>
+  <section class="grp" id="g-ferramentas"><h2 class="sec">Ferramentas de IA</h2>
+  <details id="free-claude-code">
+    <summary><span>Free Claude Code<small>palavra: CLAUDE · 6/nov</small></span></summary>
     <div class="body">
-      <p class="lk"><a href="https://github.com/morluto/rea">1. REA (Reverse Engineer Anything)</a></p>
-      <p class="lk"><a href="https://github.com/DietrichGebert/ponytail">2. Ponytail</a></p>
-      <p class="lk"><a href="https://github.com/cloudflare/security-audit-skill">3. Skill de segurança da Cloudflare</a></p>
-      <p class="note">Existem cópias do REA por aí. Use só o link acima, do repositório oficial.</p>
+      <p class="lk"><a href="https://go.creatoros.ca/free-claude-code">Abrir o link (GitHub)</a></p>
+    </div>
+  </details>
+  <details id="replica">
+    <summary><span>Replica Skill<small>clone o que um app faz, sem copiar código · palavra: APLICATIVO</small></span></summary>
+    <div class="body">
+      <p class="note">A skill é gratuita e tem 11 módulos. Instruções e download no repositório oficial:</p>
+      <p><a href="https://github.com/Jakeschincariol/replica-skill">github.com/Jakeschincariol/replica-skill</a></p>
+    </div>
+  </details>
+  <details id="graphify">
+    <summary><span>Graphify no Claude Code<small>palavra: GRAFO · 7/nov</small></span></summary>
+    <div class="body">
+      <p class="note">1. uv tool install graphifyy 2. graphify install 3. No Claude Code, na pasta do projeto: /graphify .</p>
+      <p class="lk"><a href="https://go.creatoros.ca/graphify-pdf">Ver o tutorial (PDF)</a></p>
     </div>
   </details>
   <details id="voz">
@@ -118,98 +201,32 @@
       <p class="lk"><a href="https://go.creatoros.ca/tv-pdf">Ver o tutorial (PDF)</a></p>
     </div>
   </details>
-  <details id="graphify">
-    <summary><span>Graphify no Claude Code<small>palavra: GRAFO · 7/nov</small></span></summary>
+  <details id="repo">
+    <summary><span>3 repositórios do vídeo<small>palavra: REPO</small></span></summary>
     <div class="body">
-      <p class="note">1. uv tool install graphifyy 2. graphify install 3. No Claude Code, na pasta do projeto: /graphify .</p>
-      <p class="lk"><a href="https://go.creatoros.ca/graphify-pdf">Ver o tutorial (PDF)</a></p>
+      <p class="lk"><a href="https://github.com/morluto/rea">1. REA (Reverse Engineer Anything)</a></p>
+      <p class="lk"><a href="https://github.com/DietrichGebert/ponytail">2. Ponytail</a></p>
+      <p class="lk"><a href="https://github.com/cloudflare/security-audit-skill">3. Skill de segurança da Cloudflare</a></p>
+      <p class="note">Existem cópias do REA por aí. Use só o link acima, do repositório oficial.</p>
     </div>
   </details>
-  <details id="free-claude-code">
-    <summary><span>Free Claude Code<small>palavra: CLAUDE · 6/nov</small></span></summary>
+  <details id="empresa">
+    <summary><span>Perfil da sua empresa no ChatGPT<small>palavra: EMPRESA · 13/nov</small></span></summary>
     <div class="body">
-      <p class="lk"><a href="https://go.creatoros.ca/free-claude-code">Abrir o link (GitHub)</a></p>
+      <p class="note">Business Hub do ChatGPT (em beta).</p>
+      <p class="lk"><a href="https://go.creatoros.ca/empresas-chatgpt">Abrir o link</a></p>
     </div>
   </details>
+  </section>
+  <section class="grp" id="g-tutoriais"><h2 class="sec">Tutoriais</h2>
   <details id="tutorial">
     <summary><span>Tutorial Claude + Creator OS<small>palavra: INSTAGRAM · 3/nov</small></span></summary>
     <div class="body">
       <p class="lk"><a href="https://go.creatoros.ca/tutorial-claude">Ver o tutorial (PDF)</a></p>
     </div>
   </details>
-
-  <h2 class="sec">Prompts prontos</h2>
-  <details id="efeitos">
-    <summary><span>6 efeitos de edição de vídeo<small>1 prompt cada, no Claude Code · palavra: EDITAR</small></span></summary>
-    <div class="body">
-      <p class="note">Abra o Claude Code numa pasta com o seu vídeo (ex.: <b>video.mp4</b>, você falando pra câmera). Troque o que está entre [colchetes].</p>
-
-      <div class="p"><h3>Antes de começar (só na primeira vez)</h3>
-<pre>Instale o que for preciso para editar vídeo nesta pasta: ffmpeg e, em Python, rembg e opencv-python. Confirme quando estiver tudo funcionando.</pre><button>Copiar</button></div>
-
-      <div class="p"><h3>1. Cards de prova atrás de você</h3>
-<pre>No arquivo [video.mp4], recorte a pessoa do fundo quadro a quadro (rembg) e coloque dois cards escuros com cantos arredondados ATRÁS dela, um de cada lado da cabeça, com os textos "[377 mil views]" e "[699 mil views]". Os cards entram com um pulinho no segundo [2] e ficam até o fim. Salve como cards.mp4 sem mudar o áudio.</pre><button>Copiar</button></div>
-
-      <div class="p"><h3>2. Gráfico de vidro que conta as views</h3>
-<pre>No [video.mp4], a partir do segundo [3], mostre na parte de baixo um painel de vidro fosco (translúcido, borda branca fina) com o título "Views · um reel", um número que conta de 0 até [699.229] em 2 segundos e 5 barras que crescem junto. Salve como grafico.mp4 mantendo o áudio.</pre><button>Copiar</button></div>
-
-      <div class="p"><h3>3. Congela e vira figurinha</h3>
-<pre>No [video.mp4], no segundo [4], congele o quadro por 1,5 segundo: recorte a pessoa (rembg), coloque um contorno branco grosso em volta dela como um adesivo, incline 3 graus e escureça um pouco o fundo. Depois o vídeo continua normal. Salve como figurinha.mp4 com o áudio original.</pre><button>Copiar</button></div>
-
-      <div class="p"><h3>4. Ranking de IAs na tela</h3>
-<pre>No [video.mp4], a partir do segundo [2], coloque à direita um quadro escuro "Ranking de IAs" com as linhas S, A, B, C, D (cada letra numa cor). As etiquetas entram uma a uma a cada 0,4 s: S = [Claude], A = [ChatGPT] e [Gemini], B = [Copilot]. Salve como ranking.mp4 mantendo o áudio.</pre><button>Copiar</button></div>
-
-      <div class="p"><h3>5. Texto gigante atrás de você</h3>
-<pre>No [video.mp4], escreva "[20 MIL]" em branco, letra grossa e enorme, ATRÁS da pessoa (recorte com rembg e coloque a pessoa por cima do texto). O texto sobe e aparece no segundo [1]. Salve como texto-atras.mp4 com o áudio.</pre><button>Copiar</button></div>
-
-      <div class="p"><h3>6. Cor de cinema num prompt só</h3>
-<pre>Faça uma correção de cor de cinema no [video.mp4]: contraste maior, pretos mais profundos, sombras puxando pro azul-esverdeado e pele quente (estilo teal & orange), sem estourar o branco. Salve como cinema.mp4 e também um antes-e-depois lado a lado em comparacao.mp4.</pre><button>Copiar</button></div>
-
-      <p class="note"><b>Dica:</b> se o recorte da pessoa ficar ruim, grave com fundo liso e boa luz. O rembg roda no seu computador e pode demorar uns minutos em vídeos longos.</p>
-    </div>
-  </details>
-
-  <details id="juri">
-    <summary><span>Júri de IAs<small>7 IAs julgam sua ideia · palavra: JÚRI</small></span></summary>
-    <div class="body">
-      <p class="note">Cole no Claude ou no ChatGPT e troque o que está entre [colchetes].</p>
-      <div class="p"><h3>Prompt do Júri</h3>
-<pre>Quero que você monte um JÚRI para avaliar minha ideia com honestidade. Não concorde comigo só para me agradar.
-
-MINHA IDEIA:
-[descreva sua ideia em poucas linhas: o que é, para quem, quanto custa, como ganha dinheiro]
-
-REGRAS DO JÚRI:
-1. Crie 7 jurados com visões diferentes:
-- Cliente (vai pagar por isso?)
-- Contador (as contas fecham?)
-- Concorrente (como eu te derrubaria?)
-- Sócio (vale meu tempo e meu dinheiro?)
-- Especialista de marketing (dá pra vender? pra quem?)
-- Especialista do setor (o que um veterano da área vê de errado?)
-- Advogado do diabo (qual o pior cenário realista?)
-2. ACUSAÇÃO: o jurado mais crítico apresenta os 3 maiores problemas da ideia.
-3. DEFESA: outro jurado responde a cada acusação com argumentos reais, sem enrolar.
-4. VOTAÇÃO SECRETA: cada jurado vota APROVADA ou REPROVADA, dá uma nota de 0 a 10 e explica o motivo em 1 frase.
-5. VEREDITO FINAL:
-- Resultado (placar dos votos e média das notas)
-- Os 3 pontos fracos mais graves
-- Os 2 pontos fortes reais
-- Um plano com 5 passos pra melhorar a ideia, do mais urgente pro menos urgente
-- Um teste barato que eu possa fazer nesta semana pra validar a ideia antes de investir
-
-Seja direto e específico. Se faltar informação, diga o que falta em vez de inventar.</pre><button>Copiar</button></div>
-    </div>
-  </details>
-
-  <details id="replica">
-    <summary><span>Replica Skill<small>clone o que um app faz, sem copiar código · palavra: APLICATIVO</small></span></summary>
-    <div class="body">
-      <p class="note">A skill é gratuita e tem 11 módulos. Instruções e download no repositório oficial:</p>
-      <p><a href="https://github.com/Jakeschincariol/replica-skill">github.com/Jakeschincariol/replica-skill</a></p>
-    </div>
-  </details>
-
+  </section>
+  <p id="none">Nada encontrado. Tente outra palavra.</p>
   <footer>Novos prompts a cada vídeo · comenta a palavra do vídeo no <a href="https://instagram.com/larasantana.ia">Instagram</a> e eu te mando no direct.</footer>
 </main>
 <script>
@@ -222,7 +239,24 @@ Seja direto e específico. Se faltar informação, diga o que falta em vez de in
   });
   (function () {
     var h = location.hash.slice(1), d = h && document.getElementById(h);
-    if (d && d.tagName === 'DETAILS') { document.querySelectorAll('details').forEach(function (x) { x.open = false; }); d.open = true; d.scrollIntoView(); }
+    if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); }
+  })();
+  (function () {
+    var q = document.getElementById('q'), none = document.getElementById('none');
+    q.addEventListener('input', function () {
+      var v = q.value.trim().toLowerCase(), any = false;
+      document.querySelectorAll('.grp').forEach(function (g) {
+        var shown = 0;
+        g.querySelectorAll('details').forEach(function (d) {
+          var hit = !v || d.textContent.toLowerCase().indexOf(v) > -1;
+          d.style.display = hit ? '' : 'none';
+          if (hit) shown++;
+        });
+        g.style.display = shown ? '' : 'none';
+        if (shown) any = true;
+      });
+      none.style.display = any ? 'none' : 'block';
+    });
   })();
 </script>
 </body>
