@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema de Cortes · @larasantana.ia</title>
+<meta name="description" content="Plugin para o Claude que corta uma live em vídeos prontos pra postar. Passo a passo.">
+<style>
+  :root { --bg:#0e0f14; --card:#181a22; --line:#2a2d3a; --txt:#f2f3f7; --mut:#9aa0b4; --pink:#7c3aed; --green:#2fbf71; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  main { max-width:620px; margin:0 auto; padding:32px 18px 60px; }
+  header { text-align:center; margin-bottom:22px; }
+  .av { width:84px; height:84px; border-radius:50%; object-fit:cover; border:3px solid var(--pink); }
+  h1 { font-size:26px; margin:12px 0 6px; }
+  header p { color:var(--mut); margin:0 0 16px; }
+  .cta { display:block; text-align:center; background:var(--pink); color:#fff; text-decoration:none; font-weight:700; padding:16px 20px; border-radius:16px; font-size:18px; }
+  .step { display:flex; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:12px 0; }
+  .n { flex:none; width:36px; height:36px; border-radius:50%; background:#a78bfa; color:#14102a; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .step p { margin:0; } .step small { color:var(--mut); display:block; margin-top:4px; }
+  pre { margin:8px 0 0; background:#11121a; border:1px solid var(--line); border-radius:12px; padding:12px; white-space:pre-wrap; font:15px/1.5 ui-monospace,Menlo,monospace; color:#dfe2ee; }
+  button { margin-top:8px; background:transparent; border:1px solid #a78bfa; color:#a78bfa; border-radius:999px; padding:6px 14px; font-weight:600; cursor:pointer; }
+  button.ok { background:var(--green); border-color:var(--green); color:#fff; }
+  .note { color:var(--mut); font-size:14px; margin-top:22px; }
+  a { color:#a78bfa; }
+  footer { text-align:center; color:var(--mut); font-size:13px; margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img class="av" src="lara.jpg" alt="Lara Santana">
+    <h1>Sistema de Cortes</h1>
+    <p>Plugin para o Claude que corta uma live em vídeos prontos pra postar.</p>
+    <a class="cta" href="sistema-de-cortes.zip" download>Baixar o Sistema de Cortes (.zip)</a>
+  </header>
+
+  <div class="step"><div class="n">1</div><div><p><b>Baixe o arquivo</b></p><small>Toque no botão roxo acima e guarde o sistema-de-cortes.zip.</small></div></div>
+  <div class="step"><div class="n">2</div><div><p><b>Instale no Claude</b></p><small>Abra o Claude, vá em Configurações, clique em Plugins e suba o arquivo (Upload). O nome do menu pode mudar conforme a versão.</small></div></div>
+  <div class="step"><div class="n">3</div><div><p><b>Pegue uma live de GTA</b></p><small>De um streamer que deixou você usar. Anexe o vídeo no Claude ou coloque na pasta de trabalho.</small></div></div>
+  <div class="step"><div class="n">4</div><div><p><b>Peça os cortes</b></p>
+    <pre id="p1">corta essa live em cinco</pre><button onclick="cp('p1',this)">Copiar</button></div></div>
+  <div class="step"><div class="n">5</div><div><p><b>Pronto: os cortes chegam</b></p><small>Cinco vídeos na vertical, cada um com título. A legenda entra quando o ambiente do Claude tem Whisper; sem ele, o Claude avisa e entrega só com título.</small></div></div>
+  <div class="step"><div class="n">6</div><div><p><b>Postar sozinho (opcional)</b></p><small>Conecte ao Claude uma ferramenta de agendamento que ele consiga usar, como o Metricool, e peça para agendar os cortes.</small></div></div>
+
+  <p class="note">Precisa de um Claude que rode código (ffmpeg e Python). Use só lives de quem autorizou.</p>
+  <footer>@larasantana.ia · <a href="index.html">mais prompts e ferramentas</a></footer>
+</main>
+<script>
+function cp(id,b){navigator.clipboard.writeText(document.getElementById(id).innerText).then(()=>{b.textContent='Copiado ✓';b.classList.add('ok');setTimeout(()=>{b.textContent='Copiar';b.classList.remove('ok')},1800)})}
+</script>
+</body>
+</html>
