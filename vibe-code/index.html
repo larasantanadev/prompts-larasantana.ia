@@ -1,0 +1,24 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prompt de segurança | @larasantana.ia</title><style>body{margin:0;background:#AE93FF;font-family:system-ui,sans-serif;color:#12142b}main{max-width:560px;margin:0 auto;padding:28px 18px 48px}h1{font-size:30px;margin:0 0 6px}p{margin:0 0 20px}.c{display:block;background:#fff;border-radius:18px;padding:14px 18px;margin-bottom:12px;box-shadow:0 6px 18px rgba(40,20,110,.2)}.c small{display:block;color:#6b5bb0;font-weight:600}.c b{font-size:20px}.c p{margin:6px 0 0;font-size:15px}pre{white-space:pre-wrap;word-break:break-word;background:#efeaff;border-radius:12px;padding:12px;font-size:13px;margin:10px 0 0}button{background:#4a2fc0;color:#fff;border:0;border-radius:12px;padding:12px 18px;font-size:16px;font-weight:700;width:100%;margin-top:10px}</style></head><body><main><h1>Prompt de segurança</h1><p>Para auditar o seu app. @larasantana.ia</p>
+<div class="c"><small>Como usar</small><b>Cole no seu assistente de código</b><p>Abra o projeto no Claude Code, Cursor, Lovable ou outra ferramenta que leia o seu código, cole o prompt abaixo e peça para rodar. Ele só lê e aponta problemas; não corrige nada sem você aprovar. Não substitui uma auditoria profissional.</p></div>
+<div class="c"><small>O prompt</small><b>Auditoria de segurança em 16 itens</b><button id="b">Copiar o prompt</button><pre id="p">Você é um engenheiro de segurança de aplicações. Faça uma auditoria de segurança do código deste projeto. Leia o código de verdade e não invente nada: só aponte um problema se você achar o arquivo e a linha. Para cada item abaixo, responda ENCONTRADO, NÃO ENCONTRADO ou NÃO SEI, e cite arquivo e linha.
+
+1. Rotas de admin: existe alguma rota ou tela (como /admin) que abre sem exigir login e sem checar o perfil do usuário no servidor?
+2. IDs na URL: se eu trocar o ID de um pedido, perfil ou documento na URL, o servidor confere se o recurso é do usuário logado?
+3. Chaves e segredos: há chave de API, senha ou token escritos no código do front end, em arquivos públicos ou no histórico do Git? O arquivo .env está no .gitignore?
+4. Preço e valores: o servidor recalcula preço, total e desconto, ou confia no valor que vem do navegador?
+5. Pedidos e pagamentos: o status &quot;pago&quot; só muda por uma confirmação assinada do provedor de pagamento (webhook com verificação de assinatura)? O cliente consegue criar um pedido já como pago?
+6. Cupons: um cupom pode ser usado mais de uma vez por pessoa ou acima do limite?
+7. Perfil e permissões: o usuário consegue mudar o próprio perfil (por exemplo role: admin) enviando um campo extra no login, no cadastro ou na edição de perfil?
+8. Autenticação em duas etapas: o código tem validade curta e limite de tentativas?
+9. Força bruta: o login tem limite de tentativas por usuário e por IP, com bloqueio temporário?
+10. Assistente de IA: o texto do usuário pode mudar as regras do sistema (prompt injection)? A IA tem acesso a dados ou ações que o usuário não poderia acessar sozinho?
+11. Scripts no texto (XSS): campos como nome de usuário e comentários são escapados na hora de mostrar na tela?
+12. Upload de arquivos: o servidor confere tipo, extensão, conteúdo e tamanho, e guarda o arquivo fora de uma pasta que executa código?
+13. Consultas ao banco: alguma consulta monta SQL juntando texto do usuário, em vez de usar parâmetros?
+14. Regras de acesso do banco: as tabelas com dados de usuários têm regras de acesso por linha (RLS, no Supabase) ligadas e com políticas corretas?
+15. Mensagens de erro: o app mostra erro detalhado (stack trace, caminhos, host do banco) para o usuário em produção?
+16. Pacotes: há dependências desatualizadas ou com vulnerabilidade conhecida? Rode o comando de auditoria do gerenciador de pacotes (por exemplo npm audit) e liste o resultado.
+
+No final, entregue: (a) uma tabela com número do item, resultado, arquivo e linha; (b) os 5 problemas mais graves em ordem de prioridade; (c) a correção sugerida para cada um, com o trecho de código. Não aplique nenhuma correção sem eu aprovar.</pre></div>
+<script>document.getElementById('b').onclick=function(){var t=document.getElementById('p').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copiado!'}).catch(function(){var r=document.createRange();r.selectNode(document.getElementById('p'));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent='Selecionado: copie manualmente'})}</script>
+</main></body></html>
